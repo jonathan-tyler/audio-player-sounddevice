@@ -1,0 +1,4 @@
+# WSL-only developer dependencies for editing/type-checking this Windows runtime project.
+# Runtime dependencies live in requirements.txt and are installed into Windows Python.
+
+numpy>=1.24
