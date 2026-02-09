@@ -1,4 +1,4 @@
-# mswin-sounddevice-audio-player
+# Audio Player
 
 Play a sound file on a specific Windows audio output device by name.
 
