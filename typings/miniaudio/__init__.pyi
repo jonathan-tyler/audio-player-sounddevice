@@ -5,7 +5,7 @@ from enum import IntEnum
 from typing import Any
 
 class SampleFormat(IntEnum):
-    FLOAT32: int
+    FLOAT32: SampleFormat
 
 @dataclass
 class DecodedSoundFile:

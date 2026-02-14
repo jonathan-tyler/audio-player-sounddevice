@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import sys
 from pathlib import Path
+from typing import cast
 
 import miniaudio
 import numpy as np
@@ -40,7 +41,11 @@ class AudioPlayer:
     def __read_audio(path: Path) -> tuple[np.ndarray, int]:
         """Decode audio via miniaudio (built-in MP3/FLAC/WAV support)."""
         decoded = miniaudio.decode_file(
-            str(path), output_format=miniaudio.SampleFormat.FLOAT32
+            str(path),
+            output_format=cast(
+                miniaudio.SampleFormat,
+                miniaudio.SampleFormat.FLOAT32,
+            ),
         )
         samples = np.frombuffer(decoded.samples, dtype=np.float32)
         if decoded.nchannels > 1:
